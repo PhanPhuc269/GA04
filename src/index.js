@@ -38,6 +38,12 @@ app.use(morgan('combined'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
+  if (req.url.endsWith('.css')) {
+    res.setHeader('Content-Type', 'text/css');
+  }
+  next();
+});
+app.use((req, res, next) => {
   res.locals.userId = req.session.userId;
   next();
 });

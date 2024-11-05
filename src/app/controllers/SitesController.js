@@ -9,9 +9,9 @@ class SitesController{
         res.render('registration');
     }
     async register(req, res,next){
-        const { username, password,name } = req.body;
+        const { username, email, password } = req.body;
         try {
-            const user = new User({ username, password,name});
+            const user = new User({ username, password, email});
             await user.save();
             req.session.userId = user._id;
             //res.redirect('/set-authentication');
