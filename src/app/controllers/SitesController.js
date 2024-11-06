@@ -5,7 +5,6 @@ const User = require('../models/User');
 const crypto = require('crypto');
 const Product = require("../models/Product");
 
-
 class SitesController{
     viewRegistration(req,res,next){
         res.render('registration');
@@ -53,18 +52,27 @@ class SitesController{
     }
 
     // [GET] /
-    async index(req, res, next) {
+
+    async home(req, res, next) {
         try {
             const products = await Product.find();
             res.render('home', {
                 products: mutipleMongooseToObject(products)
             });
-           
+            //console.log(products);
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    async viewProductDetails(req, res, next) {
+        try {
+            const product = await Product.findById(req.params.id);
+            res.render('product-details', { product: mongooseToObject(product) });
         } catch (error) {
             next(error);
         }
     }
 }
-   
 
 module.exports = new SitesController();
