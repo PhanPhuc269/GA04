@@ -143,9 +143,13 @@
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="/{{this.image}}" alt="{{this.name}}">
+								<a href="/product/product-details/{{this._id}}" >
+									<img class="img-fluid" src="/{{this.image}}" alt="{{this.name}}">
+								</a>
 								<div class="product-details">
-									<h6>{{this.name}}</h6>
+									<a href="/product/product-details/{{this._id}}" >
+										<h6>{{this.name}}</h6>
+									</a>
 									<div class="price">
 										<h6>${{this.price}}</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -164,7 +168,7 @@
 											<span class="lnr lnr-sync"></span>
 											<p class="hover-text">compare</p>
 										</a>
-										<a href="" class="social-info">
+										<a href="/product/product-details/{{this._id}}" class="social-info">
 											<span class="lnr lnr-move"></span>
 											<p class="hover-text">view more</p>
 										</a>
