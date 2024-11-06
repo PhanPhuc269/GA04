@@ -1,18 +1,13 @@
 const express = require ('express');
 const router =express.Router();
-
-const sitesController= require('../app/controllers/SitesController');
-
+const productController= require('../app/controllers/ProductController');
 
 
-router.get('/',sitesController.index); 
+router.get('/',productController.index); 
+router.get('/list',productController.ViewProductListings);
+router.get('/detail/:id',productController.ViewProductDetails);
 
 
-//router.get('/', sitesController.viewProductDetails);
-
-
-//router.get('/',sitesController.welcome);
-router.get('/registration',sitesController.viewRegistration);
 //router.post('/login',sitesController.login);
 //router.post('/register',sitesController.register);
 //
