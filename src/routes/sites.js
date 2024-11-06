@@ -5,18 +5,9 @@ const sitesController= require('../app/controllers/SitesController');
 
 
 
-router.get('/',sitesController.index); 
-
-
-//router.get('/', sitesController.viewProductDetails);
-
-
-//router.get('/',sitesController.welcome);
+router.get('/',sitesController.home); 
 router.get('/registration',sitesController.viewRegistration);
-//router.post('/login',sitesController.login);
-//router.post('/register',sitesController.register);
-//
-//router.get('/product-details/:id',sitesController.ViewProductDetails);
+router.post('/register',sitesController.register);
 
 
 
