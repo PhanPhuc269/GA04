@@ -15,7 +15,7 @@ class ProductController{
                 products: mutipleMongooseToObject(products)
             });
             //console.log(products);
-           res.render('home');
+           
         } catch (error) {
             next(error);
         }
@@ -23,7 +23,7 @@ class ProductController{
     async ViewProductListings(req, res, next) {
         try {
             const products = await Product.find();
-            res.render('home', {
+            res.render('category', {
                 products: mutipleMongooseToObject(products)
             });
            

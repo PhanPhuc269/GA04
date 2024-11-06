@@ -3,6 +3,7 @@ const { mongooseToObject } = require('../../util/mongoose');
 const session = require('express-session');
 const User = require('../models/User');
 const crypto = require('crypto');
+const Product = require("../models/Product");
 
 
 class SitesController{
@@ -53,8 +54,12 @@ class SitesController{
 
     // [GET] /
     async index(req, res, next) {
-        try {         
-           res.render('home');
+        try {
+            const products = await Product.find();
+            res.render('home', {
+                products: mutipleMongooseToObject(products)
+            });
+           
         } catch (error) {
             next(error);
         }

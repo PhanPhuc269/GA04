@@ -5,7 +5,7 @@ const sitesController= require('../app/controllers/SitesController');
 
 
 
-router.get('/',sitesController.index); 
+
 
 
 //router.get('/', sitesController.viewProductDetails);
