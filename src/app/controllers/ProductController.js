@@ -6,24 +6,10 @@ const crypto = require('crypto');
 const Product = require("../models/Product");
 
 class ProductController{
-   
-    // [GET] /
-    async index(req, res, next) {
-        try {
-            const products = await Product.find();
-            res.render('home', {
-                products: mutipleMongooseToObject(products)
-            });
-            //console.log(products);
-           res.render('home');
-        } catch (error) {
-            next(error);
-        }
-    }
     async ViewProductListings(req, res, next) {
         try {
             const products = await Product.find();
-            res.render('home', {
+            res.render('list-product', {
                 products: mutipleMongooseToObject(products)
             });
            
