@@ -73,6 +73,10 @@ class SitesController{
             next(error);
         }
     }
+    // [GET] /login
+    login(req, res, next) {
+        res.render('login');
+    }
 }
 
 module.exports = new SitesController();

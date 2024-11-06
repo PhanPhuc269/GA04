@@ -1,7 +1,5 @@
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 const { mongooseToObject } = require('../../util/mongoose');
-const session = require('express-session');
-const User = require('../models/User');
 const crypto = require('crypto');
 const Product = require("../models/Product");
 
@@ -27,6 +25,15 @@ class ProductController{
         } catch (error) {
             next(error);
         }
+    }
+    ViewProductCheckout(req, res, next) {
+        res.render('checkout');
+    }
+    ViewShoppingCart(req, res, next) {
+        res.render('cart');
+    }
+    ViewOrderConfirmation(req, res, next) {
+        res.render('confirmation');
     }
 }
 
