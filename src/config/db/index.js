@@ -9,8 +9,11 @@ async function connect() {
         await mongoose.connect(process.env.MONGODB, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            serverSelectionTimeoutMS: 10000
+            serverSelectionTimeoutMS: 10000,
+         
+
         });
+        
         console.log('Connect successfully!!!');
     } catch (error) {
         console.log('Connect failure!!!', error);
