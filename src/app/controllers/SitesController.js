@@ -52,6 +52,7 @@ class SitesController{
     }
 
     // [GET] /
+
     async home(req, res, next) {
         try {
             const products = await Product.find();

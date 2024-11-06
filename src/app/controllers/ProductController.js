@@ -9,7 +9,7 @@ class ProductController{
     async ViewProductListings(req, res, next) {
         try {
             const products = await Product.find();
-            res.render('list-product', {
+            res.render('category', {
                 products: mutipleMongooseToObject(products)
             });
            
