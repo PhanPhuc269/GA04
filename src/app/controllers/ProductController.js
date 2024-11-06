@@ -21,7 +21,9 @@ class ProductController{
     async ViewProductDetails(req, res, next) {
         try {
             const product = await Product.findById(req.params.id);
+            
             res.render('product-details', { product: mongooseToObject(product) });
+
         } catch (error) {
             next(error);
         }
