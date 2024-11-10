@@ -26,8 +26,7 @@ class SitesController{
             }
             const user = new User({ username, password, email});
             await user.save();
-            req.session.userId = user._id;
-            res.redirect('/');
+            res.status(201).json({ message: 'User created successfully' });
         } catch (error) {
             next(error);
         }
